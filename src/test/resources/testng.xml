@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Product Catalog API Test Suite" parallel="false" thread-count="1">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Product API Tests" preserve-order="true">
+        <classes>
+            <class name="com.wipro.productcatalog.tests.ProductAPITest"/>
+        </classes>
+    </test>
+
+    <test name="Product Validation Tests" preserve-order="true">
+        <classes>
+            <class name="com.wipro.productcatalog.tests.ProductValidationTest"/>
+        </classes>
+    </test>
+
+</suite>
