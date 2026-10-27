@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsof -ti:8080)",
+      "Bash(xargs -r kill -9)",
+      "Bash(mvn spring-boot:run -Dspring-boot.run.jvmArguments=\"-Dserver.port=9090\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:9090/api/products)",
+      "Bash(curl -s -X OPTIONS http://localhost:9090/api/products -v)",
+      "Bash(curl -s http://localhost:9090/api/v3/api-docs)",
+      "Bash(curl -s http://localhost:3000)"
+    ]
+  }
+}

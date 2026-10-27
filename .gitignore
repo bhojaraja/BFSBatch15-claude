@@ -1,0 +1,96 @@
+# Compiled source #
+######################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Maven #
+######################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle #
+######################
+.gradle
+build/
+
+# IDE #
+######################
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+*.iws
+*.ipr
+out/
+
+# Spring Boot #
+######################
+*.log
+application.properties
+application-*.properties
+.env
+.env.local
+
+# Database #
+######################
+*.db
+*.sqlite
+*.h2.db
+h2console/
+
+# OS #
+######################
+.DS_Store
+Thumbs.db
+
+# Node.js #
+######################
+node_modules/
+npm-debug.log
+
+# Build artifacts #
+######################
+dist/
+build/
+
+# Package Files #
+######################
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Project specific #
+######################
+logs/
+temp/
+tmp/
+*.bak
+
+# VS Code #
+######################
+.vscode/
+launch.json
+settings.json
+
+# Mac specific #
+######################
+.AppleDouble
+.LSOverride
