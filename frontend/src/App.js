@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
+import ErrorBoundary from './components/ErrorBoundary';
 import './styles/App.css';
 
 /**
@@ -49,69 +50,71 @@ function App() {
   };
 
   return (
-    <div className="app-container">
-      {/* Header */}
-      <header className="app-header">
-        <div className="header-content">
-          <h1>📦 Product Catalog Management System</h1>
-          <p className="subtitle">React Frontend Application</p>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="app-main">
-        <div className="container">
-          {/* Left Column - Product Form */}
-          <div className="left-column">
-            {showForm ? (
-              <ProductForm
-                editingProduct={editingProduct}
-                onSubmit={handleFormSubmit}
-                onCancel={handleFormCancel}
-              />
-            ) : (
-              <div className="form-placeholder">
-                <div className="welcome-message">
-                  <h3>👋 Welcome to Product Catalog</h3>
-                  <p>Click the "Create New Product" button to get started</p>
-                  <button onClick={handleCreateNew} className="btn-create-main">
-                    ➕ Create New Product
-                  </button>
-                </div>
-              </div>
-            )}
+    <ErrorBoundary>
+      <div className="app-container">
+        {/* Header */}
+        <header className="app-header">
+          <div className="header-content">
+            <h1>📦 Product Catalog Management System</h1>
+            <p className="subtitle">React Frontend Application</p>
           </div>
+        </header>
 
-          {/* Right Column - Product List */}
-          <div className="right-column">
-            <div className="list-header">
-              {!showForm && (
-                <button onClick={handleCreateNew} className="btn-create-secondary">
-                  ➕ Create New Product
-                </button>
+        {/* Main Content */}
+        <main className="app-main">
+          <div className="container">
+            {/* Left Column - Product Form */}
+            <div className="left-column">
+              {showForm ? (
+                <ProductForm
+                  editingProduct={editingProduct}
+                  onSubmit={handleFormSubmit}
+                  onCancel={handleFormCancel}
+                />
+              ) : (
+                <div className="form-placeholder">
+                  <div className="welcome-message">
+                    <h3>👋 Welcome to Product Catalog</h3>
+                    <p>Click the "Create New Product" button to get started</p>
+                    <button onClick={handleCreateNew} className="btn-create-main">
+                      ➕ Create New Product
+                    </button>
+                  </div>
+                </div>
               )}
             </div>
-            <ProductList
-              onEdit={handleEdit}
-              refreshTrigger={refreshTrigger}
-            />
-          </div>
-        </div>
-      </main>
 
-      {/* Footer */}
-      <footer className="app-footer">
-        <div className="footer-content">
-          <p>
-            <strong>Backend API:</strong> http://localhost:9090/api/products
-          </p>
-          <p>
-            <strong>Swagger UI:</strong> http://localhost:9090/api/swagger-ui/index.html
-          </p>
-          <p>© 2026 Product Catalog Management System | Powered by React & Spring Boot</p>
-        </div>
-      </footer>
-    </div>
+            {/* Right Column - Product List */}
+            <div className="right-column">
+              <div className="list-header">
+                {!showForm && (
+                  <button onClick={handleCreateNew} className="btn-create-secondary">
+                    ➕ Create New Product
+                  </button>
+                )}
+              </div>
+              <ProductList
+                onEdit={handleEdit}
+                refreshTrigger={refreshTrigger}
+              />
+            </div>
+          </div>
+        </main>
+
+        {/* Footer */}
+        <footer className="app-footer">
+          <div className="footer-content">
+            <p>
+              <strong>Backend API:</strong> http://localhost:9090/api/products
+            </p>
+            <p>
+              <strong>Swagger UI:</strong> http://localhost:9090/api/swagger-ui/index.html
+            </p>
+            <p>© 2026 Product Catalog Management System | Powered by React & Spring Boot</p>
+          </div>
+        </footer>
+      </div>
+    </ErrorBoundary>
   );
 }
 
